@@ -5,14 +5,14 @@
 
 int main(void) 
 {
-    int points[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+    int points[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
     int letters[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
                      'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
-    char one_str[MAX_LIMIT];
-    char two_str[MAX_LIMIT];
-    int oneScore = 0;
-    int twoScore = 0;
+    char one_str[MAX_LIMIT]; //believe the problem is here...need to come back and work this out
+    char two_str[MAX_LIMIT]; //no time today though
+    int oneScore;
+    int twoScore;
 
     printf("Player 1! Give scrabb-daddy your word: ");
     fgets(one_str, MAX_LIMIT, stdin);
@@ -20,9 +20,10 @@ int main(void)
     printf("Player 2! Give scrabb-daddy your word: ");
     fgets(two_str, MAX_LIMIT, stdin);
 
-    for(int i = 0; i <= sizeof one_str - 1; i++)
+    for(int i = 0; i < sizeof one_str; i++)
     {
-        for(int j = 0; j < sizeof letters; j++)
+        oneScore = 0;
+        for(int j = 0; j < 26; j++)
         {
             if (one_str[i] == letters[j])
             {
@@ -32,9 +33,10 @@ int main(void)
         }
     }
 
-    for(int i = 0; i <= sizeof two_str - 1; i++)
+    for(int i = 0; i < sizeof two_str; i++)
     {
-        for(int j = 0; j <+ sizeof letters - 1; j++)
+        twoScore = 0;
+        for(int j = 0; j < 26; j++)
         {
             if (two_str[i] == letters[j])
             {
